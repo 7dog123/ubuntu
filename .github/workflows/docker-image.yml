@@ -11,7 +11,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    container: lukechilds/dockerpi:latest
+    #container: lukechilds/dockerpi:latest
     steps:
     - uses: actions/checkout@v3
-    - run: ls
+    - run: docker run -i -v $HOME/.dockerpi:/sdcard lukechilds/dockerpi
