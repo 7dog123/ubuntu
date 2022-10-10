@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:focal-20220922
 
 # updates and install apt-get packages
 RUN apt-get update
