@@ -4,13 +4,14 @@ FROM ubuntu:focal-20220922
 RUN apt-get update
 RUN apt-get -y full-upgrade
 RUN apt-get -y install kpartx qemu binfmt-support \
-    qemu-user-static libdevmapper-dev
+    qemu-user-static libdevmapper-dev grub-pc
 
 # Copy .img file
 COPY ./2022-09-22-raspios-buster-armhf-lite.img /usr/src
 
 WORKDIR /usr/src
 
+RUN update-grub
 # Set Up the Loopback Devices
 RUN kpartx -av 2022-09-22-raspios-buster-armhf-lite.img
 
