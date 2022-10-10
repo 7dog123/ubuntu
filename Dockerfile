@@ -2,7 +2,9 @@ FROM ubuntu:20.04
 
 # updates and install apt-get packages
 RUN apt-get update
-RUN apt-get -y install kpartx qemu binfmt-support qemu-user-static
+RUN apt-get -y full-upgrade
+RUN apt-get -y install kpartx qemu binfmt-support \
+    qemu-user-static libdevmapper-dev
 
 # Copy .img file
 COPY ./2022-09-22-raspios-buster-armhf-lite.img /usr/src
