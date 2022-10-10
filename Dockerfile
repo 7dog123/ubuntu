@@ -18,11 +18,12 @@ RUN resize2fs /dev/mapper/loop10p2
 
 # Mount the Loopback Filesystems
 RUN mkdir /mnt/pi_image
-RUN mount /dev/mapper/loop10p2 /mnt/pi_image
-RUN mount /dev/mapper/loop10p1 /mnt/pi_image/boot
+ls /dev/mapper
+#RUN mount /dev/mapper/loop10p2 /mnt/pi_image
+#RUN mount /dev/mapper/loop10p1 /mnt/pi_image/boot
 
 # Prepare for Chroot
-RUN cp /usr/bin/qemu-arm-static /mnt/pi_image/usr/bin
+#RUN cp /usr/bin/qemu-arm-static /mnt/pi_image/usr/bin
 
 FROM scratch
 
